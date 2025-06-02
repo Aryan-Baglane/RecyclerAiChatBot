@@ -1,0 +1,725 @@
+2025-06-02 00:01:40 [http-nio-8080-exec-10] INFO  c.e.E.controller.ScanController - Received JSON request
+2025-06-02 00:01:40 [http-nio-8080-exec-10] DEBUG c.e.EcoScan.service.ScanService - Calling Gemini API with URL: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
+2025-06-02 00:01:48 [http-nio-8080-exec-10] DEBUG c.e.EcoScan.service.ScanService - Gemini API response status: 200 OK
+2025-06-02 00:01:48 [http-nio-8080-exec-10] DEBUG c.e.EcoScan.service.ScanService - Gemini API raw response body: {
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```json\n{\n    \"productName\": \"Nalgene 32 oz Wide Mouth Water Bottle\",\n    \"confidence\": 0.95,\n    \"ecoTip\": \"Consider using reusable water bottles instead of single-use plastic bottles to reduce plastic waste and environmental impact.\",\n    \"ecoScore\": 65,\n    \"biodegradability\": 10,\n    \"carbonFootprint\": 60,\n    \"sustainability\": 70,\n    \"toxicity\": 75,\n    \"categories\": [\n        {\n            \"title\": \"Material\",\n            \"score\": 65,\n            \"description\": \"The bottle is made of Tritan, a BPA-free plastic. While BPA-free is better than BPA-containing plastics, Tritan is still a plastic derived from fossil fuels and is not biodegradable.\",\n            \"impactDetails\": [\n                \"Tritan is a plastic that requires fossil fuels for production.\",\n                \"It is not biodegradable and can persist in the environment for a long time.\",\n                \"BPA-free is a positive attribute, reducing potential health risks.\"\n            ]\n        },\n        {\n            \"title\": \"Longevity and Reusability\",\n            \"score\": 85,\n            \"description\": \"Nalgene bottles are known for their durability and reusability. This reduces the need for disposable water bottles, minimizing waste.\",\n            \"impactDetails\": [\n                \"Durable construction extends the product's lifespan.\",\n                \"Reduces the consumption of single-use plastic bottles.\",\n                \"Reusable design minimizes waste generation.\"\n            ]\n        }\n    ],\n    \"alternatives\": [\n        {\n            \"productName\": \"Hydro Flask Water Bottle\",\n            \"features\": [\n                \"Stainless steel construction\",\n                \"Durable and reusable\",\n                \"Insulated to keep drinks cold or hot\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/Hydro-Flask-Stainless-Steel-Insulated/dp/B072L24Y7W\",\n            \"ecoScore\": 80\n        },\n        {\n            \"productName\": \"Glass Water Bottle\",\n            \"features\": [\n                \"Made from glass, a more sustainable material than plastic\",\n                \"Reusable and recyclable\",\n                \"Free of harmful chemicals\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/BOTTLE-BOTTLE-Reusable-Borosilicate-Protective/dp/B07D34829B\",\n            \"ecoScore\": 75\n        },\n        {\n            \"productName\": \"Bamboo Water Bottle\",\n            \"features\": [\n                \"Made from sustainable bamboo\",\n                \"Biodegradable\",\n                \"Reusable\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/Bamboo-Bottle-Company-Reusable-Water/dp/B01N04466Z\",\n            \"ecoScore\": 85\n        }\n    ],\n    \"environmentalAlerts\": [],\n    \"environmentalBenefits\": [\n        \"Reduces reliance on single-use plastic bottles.\",\n        \"Durable and reusable, extending product lifespan.\"\n    ],\n    \"environmentalConcerns\": [\n        \"Made from plastic derived from fossil fuels.\",\n        \"Not biodegradable and can contribute to plastic pollution.\"\n    ]\n}\n```"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "avgLogprobs": -0.14734969634175951
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 2674,
+    "candidatesTokenCount": 732,
+    "totalTokenCount": 3406,
+    "promptTokensDetails": [
+      {
+        "modality": "IMAGE",
+        "tokenCount": 2322
+      },
+      {
+        "modality": "TEXT",
+        "tokenCount": 352
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 732
+      }
+    ]
+  },
+  "modelVersion": "gemini-2.0-flash",
+  "responseId": "kJw8aKvmAsT22PgP2-Cw0Ac"
+}
+
+2025-06-02 00:01:48 [http-nio-8080-exec-10] DEBUG c.e.EcoScan.service.ScanService - Extracted JSON from markdown block. Length after extraction and trim: 3023
+2025-06-02 00:01:48 [http-nio-8080-exec-10] DEBUG c.e.EcoScan.service.ScanService - Final cleaned JSON response before final parsing: >>>{    "productName": "Nalgene 32 oz Wide Mouth Water Bottle",    "confidence": 0.95,    "ecoTip": "Consider using reusable water bottles instead of single-use plastic bottles to reduce plastic waste and environmental impact.",    "ecoScore": 65,    "biodegradability": 10,    "carbonFootprint": 60,    "sustainability": 70,    "toxicity": 75,    "categories": [        {            "title": "Material",            "score": 65,            "description": "The bottle is made of Tritan, a BPA-free plastic. While BPA-free is better than BPA-containing plastics, Tritan is still a plastic derived from fossil fuels and is not biodegradable.",            "impactDetails": [                "Tritan is a plastic that requires fossil fuels for production.",                "It is not biodegradable and can persist in the environment for a long time.",                "BPA-free is a positive attribute, reducing potential health risks."            ]        },        {            "title": "Longevity and Reusability",            "score": 85,            "description": "Nalgene bottles are known for their durability and reusability. This reduces the need for disposable water bottles, minimizing waste.",            "impactDetails": [                "Durable construction extends the product's lifespan.",                "Reduces the consumption of single-use plastic bottles.",                "Reusable design minimizes waste generation."            ]        }    ],    "alternatives": [        {            "productName": "Hydro Flask Water Bottle",            "features": [                "Stainless steel construction",                "Durable and reusable",                "Insulated to keep drinks cold or hot"            ],            "amazonLink": "https://www.amazon.com/Hydro-Flask-Stainless-Steel-Insulated/dp/B072L24Y7W",            "ecoScore": 80        },        {            "productName": "Glass Water Bottle",            "features": [                "Made from glass, a more sustainable material than plastic",                "Reusable and recyclable",                "Free of harmful chemicals"            ],            "amazonLink": "https://www.amazon.com/BOTTLE-BOTTLE-Reusable-Borosilicate-Protective/dp/B07D34829B",            "ecoScore": 75        },        {            "productName": "Bamboo Water Bottle",            "features": [                "Made from sustainable bamboo",                "Biodegradable",                "Reusable"            ],            "amazonLink": "https://www.amazon.com/Bamboo-Bottle-Company-Reusable-Water/dp/B01N04466Z",            "ecoScore": 85        }    ],    "environmentalAlerts": [],    "environmentalBenefits": [        "Reduces reliance on single-use plastic bottles.",        "Durable and reusable, extending product lifespan."    ],    "environmentalConcerns": [        "Made from plastic derived from fossil fuels.",        "Not biodegradable and can contribute to plastic pollution."    ]}<<<
+2025-06-02 00:04:11 [http-nio-8080-exec-1] INFO  c.e.E.controller.ScanController - Received JSON request
+2025-06-02 00:04:11 [http-nio-8080-exec-1] DEBUG c.e.EcoScan.service.ScanService - Calling Gemini API with URL: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
+2025-06-02 00:04:20 [http-nio-8080-exec-1] DEBUG c.e.EcoScan.service.ScanService - Gemini API response status: 200 OK
+2025-06-02 00:04:20 [http-nio-8080-exec-1] DEBUG c.e.EcoScan.service.ScanService - Gemini API raw response body: {
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```json\n{\n    \"productName\": \"Land Rover Defender\",\n    \"confidence\": 0.85,\n    \"ecoTip\": \"Consider carpooling, using public transportation, or cycling for shorter trips to reduce your environmental impact.\",\n    \"ecoScore\": 35,\n    \"biodegradability\": 10,\n    \"carbonFootprint\": 85,\n    \"sustainability\": 40,\n    \"toxicity\": 50,\n    \"categories\": [\n        {\n            \"title\": \"Manufacturing\",\n            \"score\": 30,\n            \"description\": \"The manufacturing of vehicles involves significant resource extraction, energy consumption, and waste generation. The use of steel, aluminum, plastics, and other materials contributes to environmental pollution and greenhouse gas emissions.\",\n            \"impactDetails\": [\n                \"Resource extraction for raw materials\",\n                \"Energy-intensive manufacturing processes\",\n                \"Waste generation during production\",\n                \"Transportation of components and finished vehicles\"\n            ]\n        },\n        {\n            \"title\": \"Operational Impact\",\n            \"score\": 25,\n            \"description\": \"The operational impact of a vehicle primarily relates to its fuel consumption and emissions. Larger vehicles like the Land Rover Defender typically have higher fuel consumption and emit more greenhouse gases and pollutants.\",\n            \"impactDetails\": [\n                \"Fuel consumption and greenhouse gas emissions\",\n                \"Air pollution from exhaust gases\",\n                \"Noise pollution\",\n                \"Waste oil and fluids\"\n            ]\n        }\n    ],\n    \"alternatives\": [\n        {\n            \"productName\": \"Tesla Model X\",\n            \"features\": [\n                \"Electric Vehicle\",\n                \"Zero tailpipe emissions\",\n                \"Advanced technology\"\n            ],\n            \"amazonLink\": \"N/A\",\n            \"ecoScore\": 75\n        },\n        {\n            \"productName\": \"Toyota RAV4 Hybrid\",\n            \"features\": [\n                \"Hybrid powertrain\",\n                \"Improved fuel efficiency\",\n                \"Lower emissions\"\n            ],\n            \"amazonLink\": \"N/A\",\n            \"ecoScore\": 65\n        },\n        {\n            \"productName\": \"Ford Escape Plug-In Hybrid\",\n            \"features\": [\n                \"Plug-in hybrid powertrain\",\n                \"Electric driving range\",\n                \"Reduced fuel consumption\"\n            ],\n            \"amazonLink\": \"N/A\",\n            \"ecoScore\": 70\n        }\n    ],\n    \"environmentalAlerts\": [\n        \"High carbon emissions due to fuel consumption.\",\n        \"Potential for habitat destruction during resource extraction for vehicle components.\",\n        \"Contribution to air pollution in urban areas.\"\n    ],\n    \"environmentalBenefits\": [\n        \"Modern vehicles often incorporate fuel-efficient technologies.\",\n        \"Recycling programs exist for end-of-life vehicles and components.\",\n        \"Advancements in engine technology can reduce emissions compared to older models.\"\n    ],\n    \"environmentalConcerns\": [\n        \"The large size and weight of the vehicle contribute to higher fuel consumption.\",\n        \"The production of batteries for electric vehicles has environmental impacts.\",\n        \"The disposal of end-of-life tires and other vehicle components poses environmental challenges.\"\n    ]\n}\n```"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "avgLogprobs": -0.10434374343893653
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 2158,
+    "candidatesTokenCount": 707,
+    "totalTokenCount": 2865,
+    "promptTokensDetails": [
+      {
+        "modality": "IMAGE",
+        "tokenCount": 1806
+      },
+      {
+        "modality": "TEXT",
+        "tokenCount": 352
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 707
+      }
+    ]
+  },
+  "modelVersion": "gemini-2.0-flash",
+  "responseId": "J508aPfJL7CX7dcPtviHmAs"
+}
+
+2025-06-02 00:04:20 [http-nio-8080-exec-1] DEBUG c.e.EcoScan.service.ScanService - Extracted JSON from markdown block. Length after extraction and trim: 3321
+2025-06-02 00:04:20 [http-nio-8080-exec-1] DEBUG c.e.EcoScan.service.ScanService - Final cleaned JSON response before final parsing: >>>{    "productName": "Land Rover Defender",    "confidence": 0.85,    "ecoTip": "Consider carpooling, using public transportation, or cycling for shorter trips to reduce your environmental impact.",    "ecoScore": 35,    "biodegradability": 10,    "carbonFootprint": 85,    "sustainability": 40,    "toxicity": 50,    "categories": [        {            "title": "Manufacturing",            "score": 30,            "description": "The manufacturing of vehicles involves significant resource extraction, energy consumption, and waste generation. The use of steel, aluminum, plastics, and other materials contributes to environmental pollution and greenhouse gas emissions.",            "impactDetails": [                "Resource extraction for raw materials",                "Energy-intensive manufacturing processes",                "Waste generation during production",                "Transportation of components and finished vehicles"            ]        },        {            "title": "Operational Impact",            "score": 25,            "description": "The operational impact of a vehicle primarily relates to its fuel consumption and emissions. Larger vehicles like the Land Rover Defender typically have higher fuel consumption and emit more greenhouse gases and pollutants.",            "impactDetails": [                "Fuel consumption and greenhouse gas emissions",                "Air pollution from exhaust gases",                "Noise pollution",                "Waste oil and fluids"            ]        }    ],    "alternatives": [        {            "productName": "Tesla Model X",            "features": [                "Electric Vehicle",                "Zero tailpipe emissions",                "Advanced technology"            ],            "amazonLink": "N/A",            "ecoScore": 75        },        {            "productName": "Toyota RAV4 Hybrid",            "features": [                "Hybrid powertrain",                "Improved fuel efficiency",                "Lower emissions"            ],            "amazonLink": "N/A",            "ecoScore": 65        },        {            "productName": "Ford Escape Plug-In Hybrid",            "features": [                "Plug-in hybrid powertrain",                "Electric driving range",                "Reduced fuel consumption"            ],            "amazonLink": "N/A",            "ecoScore": 70        }    ],    "environmentalAlerts": [        "High carbon emissions due to fuel consumption.",        "Potential for habitat destruction during resource extraction for vehicle components.",        "Contribution to air pollution in urban areas."    ],    "environmentalBenefits": [        "Modern vehicles often incorporate fuel-efficient technologies.",        "Recycling programs exist for end-of-life vehicles and components.",        "Advancements in engine technology can reduce emissions compared to older models."    ],    "environmentalConcerns": [        "The large size and weight of the vehicle contribute to higher fuel consumption.",        "The production of batteries for electric vehicles has environmental impacts.",        "The disposal of end-of-life tires and other vehicle components poses environmental challenges."    ]}<<<
+2025-06-02 00:11:41 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-02 00:11:41 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-02 00:11:41 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-02 00:11:42 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-02 00:11:42 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-02 10:44:37 [main] INFO  c.example.EcoScan.EcoScanApplication - Starting EcoScanApplication using Java 23.0.2 with PID 37628 (C:\Users\kaila\Downloads\EcoScan\target\classes started by kaila in C:\Users\kaila\Downloads\EcoScan)
+2025-06-02 10:44:37 [main] DEBUG c.example.EcoScan.EcoScanApplication - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-02 10:44:37 [main] INFO  c.example.EcoScan.EcoScanApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-02 10:44:39 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-02 10:44:39 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-02 10:44:39 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-02 10:44:40 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-02 10:44:40 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2645 ms
+2025-06-02 10:44:40 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-06-02 10:44:40 [main] INFO  c.example.EcoScan.EcoScanApplication - Started EcoScanApplication in 4.999 seconds (process running for 6.075)
+2025-06-02 10:44:47 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-02 10:44:47 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-02 10:44:47 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-06-02 10:44:47 [http-nio-8080-exec-2] INFO  c.e.E.controller.ScanController - Received multipart file: test1.webp (5938 bytes)
+2025-06-02 10:44:47 [http-nio-8080-exec-2] DEBUG c.e.EcoScan.service.ScanService - Calling Gemini API with URL: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
+2025-06-02 10:44:56 [http-nio-8080-exec-2] DEBUG c.e.EcoScan.service.ScanService - Gemini API response status: 200 OK
+2025-06-02 10:44:56 [http-nio-8080-exec-2] DEBUG c.e.EcoScan.service.ScanService - Gemini API raw response body: {
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```json\n{\n    \"productName\": \"Cello H2O Bottle\",\n    \"confidence\": 0.95,\n    \"ecoTip\": \"Consider using a reusable water bottle made from sustainable materials like glass or stainless steel to reduce plastic waste.\",\n    \"ecoScore\": 65,\n    \"biodegradability\": 10,\n    \"carbonFootprint\": 60,\n    \"sustainability\": 70,\n    \"toxicity\": 75,\n    \"categories\": [\n        {\n            \"title\": \"Material\",\n            \"score\": 60,\n            \"description\": \"The bottle appears to be made of plastic. The type of plastic is not specified, but many plastic bottles are made from PET or Tritan. PET is recyclable but not biodegradable. Tritan is BPA-free but still plastic.\",\n            \"impactDetails\": [\n                \"Plastic production contributes to greenhouse gas emissions.\",\n                \"Plastic waste can pollute ecosystems and harm wildlife.\",\n                \"Recycling rates for plastic are relatively low.\"\n            ]\n        },\n        {\n            \"title\": \"Durability and Reusability\",\n            \"score\": 80,\n            \"description\": \"Reusable water bottles are generally more sustainable than single-use plastic bottles. The durability of the bottle affects its lifespan and overall environmental impact.\",\n            \"impactDetails\": [\n                \"Reusable bottles reduce the demand for single-use plastics.\",\n                \"Durable bottles last longer, reducing the need for replacements.\",\n                \"Proper care and cleaning can extend the lifespan of the bottle.\"\n            ]\n        }\n    ],\n    \"alternatives\": [\n        {\n            \"productName\": \"Glass Water Bottle\",\n            \"features\": [\n                \"Made from glass\",\n                \"Reusable\",\n                \"BPA-free\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/glass-water-bottle\",\n            \"ecoScore\": 85\n        },\n        {\n            \"productName\": \"Stainless Steel Water Bottle\",\n            \"features\": [\n                \"Made from stainless steel\",\n                \"Reusable\",\n                \"Durable\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/stainless-steel-water-bottle\",\n            \"ecoScore\": 90\n        },\n        {\n            \"productName\": \"Bamboo Water Bottle\",\n            \"features\": [\n                \"Bamboo exterior\",\n                \"Stainless steel interior\",\n                \"Reusable\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/bamboo-water-bottle\",\n            \"ecoScore\": 80\n        },\n        {\n            \"productName\": \"Reusable Collapsible Water Bottle\",\n            \"features\": [\n                \"Made from silicone\",\n                \"Reusable\",\n                \"Collapsible for easy storage\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/collapsible-water-bottle\",\n            \"ecoScore\": 70\n        },\n        {\n            \"productName\": \"Aluminum Water Bottle\",\n            \"features\": [\n                \"Made from aluminum\",\n                \"Reusable\",\n                \"Lightweight\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/aluminum-water-bottle\",\n            \"ecoScore\": 75\n        }\n    ],\n    \"environmentalAlerts\": [\n        \"Potential for microplastic shedding over time.\",\n        \"If the bottle is made of plastic, it may contain harmful chemicals like BPA (Bisphenol A).\"\n    ],\n    \"environmentalBenefits\": [\n        \"Reduces reliance on single-use plastic water bottles.\",\n        \"Promotes hydration and healthy habits.\"\n    ],\n    \"environmentalConcerns\": [\n        \"Plastic production contributes to greenhouse gas emissions.\",\n        \"Plastic waste can pollute ecosystems and harm wildlife if not properly recycled.\"\n    ]\n}\n```"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "avgLogprobs": -0.090975629678160974
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 1646,
+    "candidatesTokenCount": 847,
+    "totalTokenCount": 2493,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 356
+      },
+      {
+        "modality": "IMAGE",
+        "tokenCount": 1290
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 847
+      }
+    ]
+  },
+  "modelVersion": "gemini-2.0-flash",
+  "responseId": "SjM9aLuYFrjFnvgPocrJaA"
+}
+
+2025-06-02 10:44:56 [http-nio-8080-exec-2] DEBUG c.e.EcoScan.service.ScanService - Extracted JSON from markdown block. Length after extraction and trim: 3703
+2025-06-02 10:44:56 [http-nio-8080-exec-2] DEBUG c.e.EcoScan.service.ScanService - Final cleaned JSON response before final parsing: >>>{    "productName": "Cello H2O Bottle",    "confidence": 0.95,    "ecoTip": "Consider using a reusable water bottle made from sustainable materials like glass or stainless steel to reduce plastic waste.",    "ecoScore": 65,    "biodegradability": 10,    "carbonFootprint": 60,    "sustainability": 70,    "toxicity": 75,    "categories": [        {            "title": "Material",            "score": 60,            "description": "The bottle appears to be made of plastic. The type of plastic is not specified, but many plastic bottles are made from PET or Tritan. PET is recyclable but not biodegradable. Tritan is BPA-free but still plastic.",            "impactDetails": [                "Plastic production contributes to greenhouse gas emissions.",                "Plastic waste can pollute ecosystems and harm wildlife.",                "Recycling rates for plastic are relatively low."            ]        },        {            "title": "Durability and Reusability",            "score": 80,            "description": "Reusable water bottles are generally more sustainable than single-use plastic bottles. The durability of the bottle affects its lifespan and overall environmental impact.",            "impactDetails": [                "Reusable bottles reduce the demand for single-use plastics.",                "Durable bottles last longer, reducing the need for replacements.",                "Proper care and cleaning can extend the lifespan of the bottle."            ]        }    ],    "alternatives": [        {            "productName": "Glass Water Bottle",            "features": [                "Made from glass",                "Reusable",                "BPA-free"            ],            "amazonLink": "https://www.amazon.com/glass-water-bottle",            "ecoScore": 85        },        {            "productName": "Stainless Steel Water Bottle",            "features": [                "Made from stainless steel",                "Reusable",                "Durable"            ],            "amazonLink": "https://www.amazon.com/stainless-steel-water-bottle",            "ecoScore": 90        },        {            "productName": "Bamboo Water Bottle",            "features": [                "Bamboo exterior",                "Stainless steel interior",                "Reusable"            ],            "amazonLink": "https://www.amazon.com/bamboo-water-bottle",            "ecoScore": 80        },        {            "productName": "Reusable Collapsible Water Bottle",            "features": [                "Made from silicone",                "Reusable",                "Collapsible for easy storage"            ],            "amazonLink": "https://www.amazon.com/collapsible-water-bottle",            "ecoScore": 70        },        {            "productName": "Aluminum Water Bottle",            "features": [                "Made from aluminum",                "Reusable",                "Lightweight"            ],            "amazonLink": "https://www.amazon.com/aluminum-water-bottle",            "ecoScore": 75        }    ],    "environmentalAlerts": [        "Potential for microplastic shedding over time.",        "If the bottle is made of plastic, it may contain harmful chemicals like BPA (Bisphenol A)."    ],    "environmentalBenefits": [        "Reduces reliance on single-use plastic water bottles.",        "Promotes hydration and healthy habits."    ],    "environmentalConcerns": [        "Plastic production contributes to greenhouse gas emissions.",        "Plastic waste can pollute ecosystems and harm wildlife if not properly recycled."    ]}<<<
+2025-06-02 10:46:00 [http-nio-8080-exec-4] INFO  c.e.E.controller.ScanController - Received JSON request
+2025-06-02 10:46:00 [http-nio-8080-exec-4] DEBUG c.e.EcoScan.service.ScanService - Calling Gemini API with URL: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
+2025-06-02 10:46:07 [http-nio-8080-exec-4] DEBUG c.e.EcoScan.service.ScanService - Gemini API response status: 200 OK
+2025-06-02 10:46:07 [http-nio-8080-exec-4] DEBUG c.e.EcoScan.service.ScanService - Gemini API raw response body: {
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```json\n{\n    \"productName\": \"Nalgene Everyday Water Bottle\",\n    \"confidence\": 0.95,\n    \"ecoTip\": \"Refill your Nalgene bottle instead of buying single-use plastic bottles to reduce plastic waste.\",\n    \"ecoScore\": 75,\n    \"biodegradability\": 10,\n    \"carbonFootprint\": 60,\n    \"sustainability\": 80,\n    \"toxicity\": 70,\n    \"categories\": [\n        {\n            \"title\": \"Material & Manufacturing\",\n            \"score\": 70,\n            \"description\": \"The bottle is made from durable, BPA-free plastic. However, plastic production has environmental impacts.\",\n            \"impactDetails\": [\n                \"Plastic production contributes to greenhouse gas emissions.\",\n                \"The bottle is made in the USA, which may reduce transportation emissions compared to imported products.\",\n                \"BPA-free plastic is less harmful than BPA-containing plastics.\"\n            ]\n        },\n        {\n            \"title\": \"Waste Reduction & Reusability\",\n            \"score\": 90,\n            \"description\": \"Reusable water bottles significantly reduce single-use plastic waste. Nalgene bottles are known for their durability and longevity.\",\n            \"impactDetails\": [\n                \"Reduces the need for disposable plastic water bottles.\",\n                \"Durable design extends the product's lifespan, minimizing replacement frequency.\",\n                \"Easy to clean and maintain, promoting long-term use.\"\n            ]\n        }\n    ],\n    \"alternatives\": [\n        {\n            \"productName\": \"Hydro Flask Water Bottle\",\n            \"features\": [\n                \"Stainless steel construction\",\n                \"Insulated to keep drinks cold or hot\",\n                \"Durable and long-lasting\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/Hydro-Flask-Water-Bottle-Stainless/dp/B0748B141S\",\n            \"ecoScore\": 85\n        },\n        {\n            \"productName\": \"Klean Kanteen Water Bottle\",\n            \"features\": [\n                \"Stainless steel construction\",\n                \"BPA-free\",\n                \"Reusable and recyclable\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/Klean-Kanteen-Classic-Stainless-Steel/dp/B002Y3YJ9U\",\n            \"ecoScore\": 90\n        },\n        {\n            \"productName\": \"Bambaw Water Bottle\",\n            \"features\": [\n                \"Stainless steel construction\",\n                \"Bamboo lid\",\n                \"Plastic-free\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/Bambaw-Stainless-Steel-Water-Bottle/dp/B07G317683\",\n            \"ecoScore\": 92\n        },\n        {\n            \"productName\": \"Corkcicle Water Bottle\",\n            \"features\": [\n                \"Stainless steel construction\",\n                \"Triple-insulated\",\n                \"Stylish design\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/Corkcicle-Canteen-Triple-Insulated-Stainless/dp/B01846952G\",\n            \"ecoScore\": 80\n        },\n        {\n            \"productName\": \"YETI Rambler Water Bottle\",\n            \"features\": [\n                \"Stainless steel construction\",\n                \"Double-wall vacuum insulation\",\n                \"Durable and leakproof\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/YETI-Rambler-Bottle-Chug-Cap/dp/B079212448\",\n            \"ecoScore\": 82\n        }\n    ],\n    \"environmentalAlerts\": [\n        \"Plastic production contributes to pollution and resource depletion.\",\n        \"While BPA-free, the plastic may still leach chemicals under certain conditions.\"\n    ],\n    \"environmentalBenefits\": [\n        \"Reduces reliance on single-use plastic water bottles.\",\n        \"Durable design promotes long-term use and reduces waste.\"\n    ],\n    \"environmentalConcerns\": [\n        \"End-of-life disposal of the plastic bottle can contribute to landfill waste.\",\n        \"The manufacturing process of plastic requires energy and resources.\"\n    ]\n}\n```"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "avgLogprobs": -0.17049387122402673
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 1644,
+    "candidatesTokenCount": 952,
+    "totalTokenCount": 2596,
+    "promptTokensDetails": [
+      {
+        "modality": "IMAGE",
+        "tokenCount": 1290
+      },
+      {
+        "modality": "TEXT",
+        "tokenCount": 354
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 952
+      }
+    ]
+  },
+  "modelVersion": "gemini-2.0-flash",
+  "responseId": "kTM9aJPTE8XWnvgP3LDNsAw"
+}
+
+2025-06-02 10:46:07 [http-nio-8080-exec-4] DEBUG c.e.EcoScan.service.ScanService - Extracted JSON from markdown block. Length after extraction and trim: 3914
+2025-06-02 10:46:07 [http-nio-8080-exec-4] DEBUG c.e.EcoScan.service.ScanService - Final cleaned JSON response before final parsing: >>>{    "productName": "Nalgene Everyday Water Bottle",    "confidence": 0.95,    "ecoTip": "Refill your Nalgene bottle instead of buying single-use plastic bottles to reduce plastic waste.",    "ecoScore": 75,    "biodegradability": 10,    "carbonFootprint": 60,    "sustainability": 80,    "toxicity": 70,    "categories": [        {            "title": "Material & Manufacturing",            "score": 70,            "description": "The bottle is made from durable, BPA-free plastic. However, plastic production has environmental impacts.",            "impactDetails": [                "Plastic production contributes to greenhouse gas emissions.",                "The bottle is made in the USA, which may reduce transportation emissions compared to imported products.",                "BPA-free plastic is less harmful than BPA-containing plastics."            ]        },        {            "title": "Waste Reduction & Reusability",            "score": 90,            "description": "Reusable water bottles significantly reduce single-use plastic waste. Nalgene bottles are known for their durability and longevity.",            "impactDetails": [                "Reduces the need for disposable plastic water bottles.",                "Durable design extends the product's lifespan, minimizing replacement frequency.",                "Easy to clean and maintain, promoting long-term use."            ]        }    ],    "alternatives": [        {            "productName": "Hydro Flask Water Bottle",            "features": [                "Stainless steel construction",                "Insulated to keep drinks cold or hot",                "Durable and long-lasting"            ],            "amazonLink": "https://www.amazon.com/Hydro-Flask-Water-Bottle-Stainless/dp/B0748B141S",            "ecoScore": 85        },        {            "productName": "Klean Kanteen Water Bottle",            "features": [                "Stainless steel construction",                "BPA-free",                "Reusable and recyclable"            ],            "amazonLink": "https://www.amazon.com/Klean-Kanteen-Classic-Stainless-Steel/dp/B002Y3YJ9U",            "ecoScore": 90        },        {            "productName": "Bambaw Water Bottle",            "features": [                "Stainless steel construction",                "Bamboo lid",                "Plastic-free"            ],            "amazonLink": "https://www.amazon.com/Bambaw-Stainless-Steel-Water-Bottle/dp/B07G317683",            "ecoScore": 92        },        {            "productName": "Corkcicle Water Bottle",            "features": [                "Stainless steel construction",                "Triple-insulated",                "Stylish design"            ],            "amazonLink": "https://www.amazon.com/Corkcicle-Canteen-Triple-Insulated-Stainless/dp/B01846952G",            "ecoScore": 80        },        {            "productName": "YETI Rambler Water Bottle",            "features": [                "Stainless steel construction",                "Double-wall vacuum insulation",                "Durable and leakproof"            ],            "amazonLink": "https://www.amazon.com/YETI-Rambler-Bottle-Chug-Cap/dp/B079212448",            "ecoScore": 82        }    ],    "environmentalAlerts": [        "Plastic production contributes to pollution and resource depletion.",        "While BPA-free, the plastic may still leach chemicals under certain conditions."    ],    "environmentalBenefits": [        "Reduces reliance on single-use plastic water bottles.",        "Durable design promotes long-term use and reduces waste."    ],    "environmentalConcerns": [        "End-of-life disposal of the plastic bottle can contribute to landfill waste.",        "The manufacturing process of plastic requires energy and resources."    ]}<<<
+2025-06-02 11:34:12 [http-nio-8080-exec-6] INFO  c.e.E.controller.ScanController - Received JSON request
+2025-06-02 11:34:12 [http-nio-8080-exec-6] DEBUG c.e.EcoScan.service.ScanService - Calling Gemini API with URL: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
+2025-06-02 11:34:20 [http-nio-8080-exec-6] DEBUG c.e.EcoScan.service.ScanService - Gemini API response status: 200 OK
+2025-06-02 11:34:20 [http-nio-8080-exec-6] DEBUG c.e.EcoScan.service.ScanService - Gemini API raw response body: {
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```json\n{\n    \"productName\": \"Nalgene Everyday Water Bottle\",\n    \"confidence\": 0.95,\n    \"ecoTip\": \"Refill your Nalgene bottle instead of buying single-use plastic bottles to reduce plastic waste.\",\n    \"ecoScore\": 65,\n    \"biodegradability\": 10,\n    \"carbonFootprint\": 50,\n    \"sustainability\": 70,\n    \"toxicity\": 60,\n    \"categories\": [\n        {\n            \"title\": \"Material & Manufacturing\",\n            \"score\": 60,\n            \"description\": \"The bottle is made from Tritan, a BPA-free plastic. While BPA-free is better, plastic production still requires fossil fuels and energy. Manufacturing processes can have environmental impacts.\",\n            \"impactDetails\": [\n                \"Tritan plastic is durable and reusable, reducing the need for replacements.\",\n                \"Plastic production contributes to greenhouse gas emissions.\",\n                \"Manufacturing processes can generate waste and pollution.\"\n            ]\n        },\n        {\n            \"title\": \"Waste Reduction\",\n            \"score\": 80,\n            \"description\": \"Reusable water bottles significantly reduce single-use plastic bottle waste. Nalgene bottles are known for their durability, further extending their lifespan and reducing the need for replacements.\",\n            \"impactDetails\": [\n                \"Reduces the demand for single-use plastic bottles.\",\n                \"Durable design minimizes the need for replacements.\",\n                \"Proper disposal or recycling is still important at the end of the bottle's life.\"\n            ]\n        }\n    ],\n    \"alternatives\": [\n        {\n            \"productName\": \"Hydro Flask Water Bottle\",\n            \"features\": [\n                \"Stainless steel construction\",\n                \"Double-wall vacuum insulation\",\n                \"Durable and long-lasting\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/Hydro-Flask-Water-Bottle-Stainless/dp/B074W4YF8L\",\n            \"ecoScore\": 75\n        },\n        {\n            \"productName\": \"Klean Kanteen Classic\",\n            \"features\": [\n                \"Stainless steel construction\",\n                \"BPA-free\",\n                \"Reusable and recyclable\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/Klean-Kanteen-Classic-Stainless-Steel/dp/B002Y3Q97U\",\n            \"ecoScore\": 80\n        },\n        {\n            \"productName\": \"Bambaw Water Bottle\",\n            \"features\": [\n                \"Stainless steel construction\",\n                \"Bamboo lid\",\n                \"Plastic-free\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/Bambaw-Stainless-Steel-Water-Bottle/dp/B07G345678\",\n            \"ecoScore\": 85\n        },\n        {\n            \"productName\": \"Corkcicle Canteen\",\n            \"features\": [\n                \"Stainless steel construction\",\n                \"Triple-insulated\",\n                \"Stylish design\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/Corkcicle-Canteen-Water-Bottle-Stainless/dp/B0178L880E\",\n            \"ecoScore\": 70\n        },\n        {\n            \"productName\": \"YETI Rambler\",\n            \"features\": [\n                \"Stainless steel construction\",\n                \"Double-wall vacuum insulation\",\n                \"Extremely durable\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/YETI-Rambler-Stainless-Steel-Vacuum/dp/B00V59996U\",\n            \"ecoScore\": 72\n        }\n    ],\n    \"environmentalAlerts\": [],\n    \"environmentalBenefits\": [\n        \"Reduces single-use plastic waste.\",\n        \"Durable and long-lasting, minimizing replacements.\"\n    ],\n    \"environmentalConcerns\": [\n        \"Plastic production requires fossil fuels.\",\n        \"Plastic is not biodegradable.\",\n        \"Potential for microplastic shedding over time.\"\n    ]\n}\n```"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "avgLogprobs": -0.15339437426437977
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 1644,
+    "candidatesTokenCount": 916,
+    "totalTokenCount": 2560,
+    "promptTokensDetails": [
+      {
+        "modality": "IMAGE",
+        "tokenCount": 1290
+      },
+      {
+        "modality": "TEXT",
+        "tokenCount": 354
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 916
+      }
+    ]
+  },
+  "modelVersion": "gemini-2.0-flash",
+  "responseId": "3j49aKnNAfL8ld8PutujkAo"
+}
+
+2025-06-02 11:34:20 [http-nio-8080-exec-6] DEBUG c.e.EcoScan.service.ScanService - Extracted JSON from markdown block. Length after extraction and trim: 3769
+2025-06-02 11:34:20 [http-nio-8080-exec-6] DEBUG c.e.EcoScan.service.ScanService - Final cleaned JSON response before final parsing: >>>{    "productName": "Nalgene Everyday Water Bottle",    "confidence": 0.95,    "ecoTip": "Refill your Nalgene bottle instead of buying single-use plastic bottles to reduce plastic waste.",    "ecoScore": 65,    "biodegradability": 10,    "carbonFootprint": 50,    "sustainability": 70,    "toxicity": 60,    "categories": [        {            "title": "Material & Manufacturing",            "score": 60,            "description": "The bottle is made from Tritan, a BPA-free plastic. While BPA-free is better, plastic production still requires fossil fuels and energy. Manufacturing processes can have environmental impacts.",            "impactDetails": [                "Tritan plastic is durable and reusable, reducing the need for replacements.",                "Plastic production contributes to greenhouse gas emissions.",                "Manufacturing processes can generate waste and pollution."            ]        },        {            "title": "Waste Reduction",            "score": 80,            "description": "Reusable water bottles significantly reduce single-use plastic bottle waste. Nalgene bottles are known for their durability, further extending their lifespan and reducing the need for replacements.",            "impactDetails": [                "Reduces the demand for single-use plastic bottles.",                "Durable design minimizes the need for replacements.",                "Proper disposal or recycling is still important at the end of the bottle's life."            ]        }    ],    "alternatives": [        {            "productName": "Hydro Flask Water Bottle",            "features": [                "Stainless steel construction",                "Double-wall vacuum insulation",                "Durable and long-lasting"            ],            "amazonLink": "https://www.amazon.com/Hydro-Flask-Water-Bottle-Stainless/dp/B074W4YF8L",            "ecoScore": 75        },        {            "productName": "Klean Kanteen Classic",            "features": [                "Stainless steel construction",                "BPA-free",                "Reusable and recyclable"            ],            "amazonLink": "https://www.amazon.com/Klean-Kanteen-Classic-Stainless-Steel/dp/B002Y3Q97U",            "ecoScore": 80        },        {            "productName": "Bambaw Water Bottle",            "features": [                "Stainless steel construction",                "Bamboo lid",                "Plastic-free"            ],            "amazonLink": "https://www.amazon.com/Bambaw-Stainless-Steel-Water-Bottle/dp/B07G345678",            "ecoScore": 85        },        {            "productName": "Corkcicle Canteen",            "features": [                "Stainless steel construction",                "Triple-insulated",                "Stylish design"            ],            "amazonLink": "https://www.amazon.com/Corkcicle-Canteen-Water-Bottle-Stainless/dp/B0178L880E",            "ecoScore": 70        },        {            "productName": "YETI Rambler",            "features": [                "Stainless steel construction",                "Double-wall vacuum insulation",                "Extremely durable"            ],            "amazonLink": "https://www.amazon.com/YETI-Rambler-Stainless-Steel-Vacuum/dp/B00V59996U",            "ecoScore": 72        }    ],    "environmentalAlerts": [],    "environmentalBenefits": [        "Reduces single-use plastic waste.",        "Durable and long-lasting, minimizing replacements."    ],    "environmentalConcerns": [        "Plastic production requires fossil fuels.",        "Plastic is not biodegradable.",        "Potential for microplastic shedding over time."    ]}<<<
+2025-06-02 11:35:32 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-02 11:35:33 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-02 19:00:00 [main] INFO  c.example.EcoScan.EcoScanApplication - Starting EcoScanApplication using Java 23.0.2 with PID 43508 (C:\Users\kaila\Downloads\EcoScan\target\classes started by kaila in C:\Users\kaila\Downloads\EcoScan)
+2025-06-02 19:00:00 [main] DEBUG c.example.EcoScan.EcoScanApplication - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-02 19:00:00 [main] INFO  c.example.EcoScan.EcoScanApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-02 19:00:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-02 19:00:04 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-02 19:00:04 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-02 19:00:04 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-02 19:00:04 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4009 ms
+2025-06-02 19:00:05 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-06-02 19:00:05 [main] INFO  c.example.EcoScan.EcoScanApplication - Started EcoScanApplication in 8.662 seconds (process running for 9.968)
+2025-06-02 19:02:16 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-02 19:02:16 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-02 19:02:16 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 21 ms
+2025-06-02 19:02:17 [http-nio-8080-exec-1] INFO  c.e.E.controller.ScanController - Received JSON request
+2025-06-02 19:02:17 [http-nio-8080-exec-1] DEBUG c.e.EcoScan.service.ScanService - Calling Gemini API with URL: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
+2025-06-02 19:02:22 [http-nio-8080-exec-1] ERROR c.e.EcoScan.service.ScanService - Error calling Gemini API: 503 Service Unavailable on POST request for "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent": "{<EOL>  "error": {<EOL>    "code": 503,<EOL>    "message": "The model is overloaded. Please try again later.",<EOL>    "status": "UNAVAILABLE"<EOL>  }<EOL>}<EOL>"
+org.springframework.web.client.HttpServerErrorException$ServiceUnavailable: 503 Service Unavailable on POST request for "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent": "{<EOL>  "error": {<EOL>    "code": 503,<EOL>    "message": "The model is overloaded. Please try again later.",<EOL>    "status": "UNAVAILABLE"<EOL>  }<EOL>}<EOL>"
+	at org.springframework.web.client.HttpServerErrorException.create(HttpServerErrorException.java:111)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:189)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:147)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:953)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:902)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:801)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:683)
+	at com.example.EcoScan.service.ScanService.scanProduct(ScanService.java:92)
+	at com.example.EcoScan.controller.ScanController.scanProductJson(ScanController.java:53)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2025-06-02 19:02:22 [http-nio-8080-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Failed to analyze product] with root cause
+org.springframework.web.client.HttpServerErrorException$ServiceUnavailable: 503 Service Unavailable on POST request for "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent": "{<EOL>  "error": {<EOL>    "code": 503,<EOL>    "message": "The model is overloaded. Please try again later.",<EOL>    "status": "UNAVAILABLE"<EOL>  }<EOL>}<EOL>"
+	at org.springframework.web.client.HttpServerErrorException.create(HttpServerErrorException.java:111)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:189)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:147)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:953)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:902)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:801)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:683)
+	at com.example.EcoScan.service.ScanService.scanProduct(ScanService.java:92)
+	at com.example.EcoScan.controller.ScanController.scanProductJson(ScanController.java:53)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2025-06-02 19:06:18 [http-nio-8080-exec-3] INFO  c.e.E.controller.ScanController - Received JSON request
+2025-06-02 19:06:18 [http-nio-8080-exec-3] DEBUG c.e.EcoScan.service.ScanService - Calling Gemini API with URL: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
+2025-06-02 19:06:21 [http-nio-8080-exec-3] ERROR c.e.EcoScan.service.ScanService - Error calling Gemini API: 503 Service Unavailable on POST request for "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent": "{<EOL>  "error": {<EOL>    "code": 503,<EOL>    "message": "The model is overloaded. Please try again later.",<EOL>    "status": "UNAVAILABLE"<EOL>  }<EOL>}<EOL>"
+org.springframework.web.client.HttpServerErrorException$ServiceUnavailable: 503 Service Unavailable on POST request for "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent": "{<EOL>  "error": {<EOL>    "code": 503,<EOL>    "message": "The model is overloaded. Please try again later.",<EOL>    "status": "UNAVAILABLE"<EOL>  }<EOL>}<EOL>"
+	at org.springframework.web.client.HttpServerErrorException.create(HttpServerErrorException.java:111)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:189)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:147)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:953)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:902)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:801)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:683)
+	at com.example.EcoScan.service.ScanService.scanProduct(ScanService.java:92)
+	at com.example.EcoScan.controller.ScanController.scanProductJson(ScanController.java:53)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2025-06-02 19:06:21 [http-nio-8080-exec-3] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Failed to analyze product] with root cause
+org.springframework.web.client.HttpServerErrorException$ServiceUnavailable: 503 Service Unavailable on POST request for "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent": "{<EOL>  "error": {<EOL>    "code": 503,<EOL>    "message": "The model is overloaded. Please try again later.",<EOL>    "status": "UNAVAILABLE"<EOL>  }<EOL>}<EOL>"
+	at org.springframework.web.client.HttpServerErrorException.create(HttpServerErrorException.java:111)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:189)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:147)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:953)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:902)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:801)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:683)
+	at com.example.EcoScan.service.ScanService.scanProduct(ScanService.java:92)
+	at com.example.EcoScan.controller.ScanController.scanProductJson(ScanController.java:53)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2025-06-02 19:08:04 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-02 19:08:04 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-02 19:08:16 [main] INFO  c.example.EcoScan.EcoScanApplication - Starting EcoScanApplication using Java 23.0.2 with PID 32240 (C:\Users\kaila\Downloads\EcoScan\target\classes started by kaila in C:\Users\kaila\Downloads\EcoScan)
+2025-06-02 19:08:16 [main] DEBUG c.example.EcoScan.EcoScanApplication - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-02 19:08:16 [main] INFO  c.example.EcoScan.EcoScanApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-02 19:08:18 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-02 19:08:18 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-02 19:08:18 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-02 19:08:18 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-02 19:08:18 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2061 ms
+2025-06-02 19:08:19 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-06-02 19:08:19 [main] INFO  c.example.EcoScan.EcoScanApplication - Started EcoScanApplication in 4.145 seconds (process running for 5.144)
+2025-06-02 19:09:01 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-02 19:09:01 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-02 19:09:01 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-06-02 19:09:02 [http-nio-8080-exec-1] INFO  c.e.E.controller.ScanController - Received JSON request
+2025-06-02 19:09:02 [http-nio-8080-exec-1] DEBUG c.e.EcoScan.service.ScanService - Calling Gemini API with URL: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
+2025-06-02 19:09:11 [http-nio-8080-exec-1] DEBUG c.e.EcoScan.service.ScanService - Gemini API response status: 200 OK
+2025-06-02 19:09:11 [http-nio-8080-exec-1] DEBUG c.e.EcoScan.service.ScanService - Gemini API raw response body: {
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```json\n{\n    \"productName\": \"Nalgene Everyday Water Bottle\",\n    \"confidence\": 0.95,\n    \"ecoTip\": \"Refill your Nalgene bottle instead of buying single-use plastic bottles to reduce plastic waste.\",\n    \"ecoScore\": 75,\n    \"biodegradability\": 10,\n    \"carbonFootprint\": 60,\n    \"sustainability\": 80,\n    \"toxicity\": 70,\n    \"categories\": [\n        {\n            \"title\": \"Material\",\n            \"score\": 70,\n            \"description\": \"The bottle is made from Tritan, a BPA-free plastic. While BPA-free is good, plastic still has environmental concerns related to production and disposal.\",\n            \"impactDetails\": [\n                \"Tritan is a durable plastic, extending the product's lifespan.\",\n                \"Plastic production contributes to greenhouse gas emissions.\",\n                \"Plastic waste can persist in the environment for a long time.\"\n            ]\n        },\n        {\n            \"title\": \"Durability & Longevity\",\n            \"score\": 90,\n            \"description\": \"Nalgene bottles are known for their durability and long lifespan, reducing the need for frequent replacements.\",\n            \"impactDetails\": [\n                \"Durable products reduce consumption of resources for manufacturing new items.\",\n                \"Long-lasting products minimize waste generation.\"\n            ]\n        }\n    ],\n    \"alternatives\": [\n        {\n            \"productName\": \"Hydro Flask Water Bottle\",\n            \"features\": [\n                \"Stainless steel\",\n                \"Insulated\",\n                \"Durable\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/Hydro-Flask-Stainless-Steel-Insulated/dp/B07486Z21Z\",\n            \"ecoScore\": 85\n        },\n        {\n            \"productName\": \"Klean Kanteen Water Bottle\",\n            \"features\": [\n                \"Stainless steel\",\n                \"Reusable\",\n                \"BPA-free\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/Klean-Kanteen-Classic-Stainless-Steel/dp/B002Y3Y010\",\n            \"ecoScore\": 80\n        },\n        {\n            \"productName\": \"Bambu Water Bottle\",\n            \"features\": [\n                \"Bamboo\",\n                \"Biodegradable\",\n                \"Reusable\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/Bambu-Reusable-Water-Bottle-Biodegradable/dp/B07G345678\",\n            \"ecoScore\": 90\n        },\n        {\n            \"productName\": \"Glass Water Bottle\",\n            \"features\": [\n                \"Glass\",\n                \"Reusable\",\n                \"Easy to clean\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/Glass-Water-Bottle-Reusable-Borosilicate/dp/B07D345678\",\n            \"ecoScore\": 70\n        },\n        {\n            \"productName\": \"Corkcicle Water Bottle\",\n            \"features\": [\n                \"Stainless steel\",\n                \"Insulated\",\n                \"Stylish\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/Corkcicle-Canteen-Stainless-Steel-Water/dp/B0185Q4567\",\n            \"ecoScore\": 82\n        }\n    ],\n    \"environmentalAlerts\": [\n        \"Plastic production contributes to greenhouse gas emissions.\",\n        \"Plastic waste can persist in the environment for a long time.\"\n    ],\n    \"environmentalBenefits\": [\n        \"Reusable, reducing reliance on single-use plastic bottles.\",\n        \"Durable, extending the product's lifespan and reducing the need for replacements.\"\n    ],\n    \"environmentalConcerns\": [\n        \"Made of plastic, which is derived from fossil fuels.\",\n        \"Potential for microplastic shedding over time.\"\n    ]\n}\n```"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "avgLogprobs": -0.1286169198843149
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 1644,
+    "candidatesTokenCount": 897,
+    "totalTokenCount": 2541,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 354
+      },
+      {
+        "modality": "IMAGE",
+        "tokenCount": 1290
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 897
+      }
+    ]
+  },
+  "modelVersion": "gemini-2.0-flash",
+  "responseId": "eak9aKLbArSOmecP5un24Qg"
+}
+
+2025-06-02 19:09:11 [http-nio-8080-exec-1] DEBUG c.e.EcoScan.service.ScanService - Extracted JSON from markdown block. Length after extraction and trim: 3574
+2025-06-02 19:09:11 [http-nio-8080-exec-1] DEBUG c.e.EcoScan.service.ScanService - Final cleaned JSON response before final parsing: >>>{    "productName": "Nalgene Everyday Water Bottle",    "confidence": 0.95,    "ecoTip": "Refill your Nalgene bottle instead of buying single-use plastic bottles to reduce plastic waste.",    "ecoScore": 75,    "biodegradability": 10,    "carbonFootprint": 60,    "sustainability": 80,    "toxicity": 70,    "categories": [        {            "title": "Material",            "score": 70,            "description": "The bottle is made from Tritan, a BPA-free plastic. While BPA-free is good, plastic still has environmental concerns related to production and disposal.",            "impactDetails": [                "Tritan is a durable plastic, extending the product's lifespan.",                "Plastic production contributes to greenhouse gas emissions.",                "Plastic waste can persist in the environment for a long time."            ]        },        {            "title": "Durability & Longevity",            "score": 90,            "description": "Nalgene bottles are known for their durability and long lifespan, reducing the need for frequent replacements.",            "impactDetails": [                "Durable products reduce consumption of resources for manufacturing new items.",                "Long-lasting products minimize waste generation."            ]        }    ],    "alternatives": [        {            "productName": "Hydro Flask Water Bottle",            "features": [                "Stainless steel",                "Insulated",                "Durable"            ],            "amazonLink": "https://www.amazon.com/Hydro-Flask-Stainless-Steel-Insulated/dp/B07486Z21Z",            "ecoScore": 85        },        {            "productName": "Klean Kanteen Water Bottle",            "features": [                "Stainless steel",                "Reusable",                "BPA-free"            ],            "amazonLink": "https://www.amazon.com/Klean-Kanteen-Classic-Stainless-Steel/dp/B002Y3Y010",            "ecoScore": 80        },        {            "productName": "Bambu Water Bottle",            "features": [                "Bamboo",                "Biodegradable",                "Reusable"            ],            "amazonLink": "https://www.amazon.com/Bambu-Reusable-Water-Bottle-Biodegradable/dp/B07G345678",            "ecoScore": 90        },        {            "productName": "Glass Water Bottle",            "features": [                "Glass",                "Reusable",                "Easy to clean"            ],            "amazonLink": "https://www.amazon.com/Glass-Water-Bottle-Reusable-Borosilicate/dp/B07D345678",            "ecoScore": 70        },        {            "productName": "Corkcicle Water Bottle",            "features": [                "Stainless steel",                "Insulated",                "Stylish"            ],            "amazonLink": "https://www.amazon.com/Corkcicle-Canteen-Stainless-Steel-Water/dp/B0185Q4567",            "ecoScore": 82        }    ],    "environmentalAlerts": [        "Plastic production contributes to greenhouse gas emissions.",        "Plastic waste can persist in the environment for a long time."    ],    "environmentalBenefits": [        "Reusable, reducing reliance on single-use plastic bottles.",        "Durable, extending the product's lifespan and reducing the need for replacements."    ],    "environmentalConcerns": [        "Made of plastic, which is derived from fossil fuels.",        "Potential for microplastic shedding over time."    ]}<<<
+2025-06-02 19:43:40 [http-nio-8080-exec-3] INFO  c.e.E.controller.ScanController - Received JSON request
+2025-06-02 19:43:40 [http-nio-8080-exec-3] DEBUG c.e.EcoScan.service.ScanService - Calling Gemini API with URL: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
+2025-06-02 19:43:44 [http-nio-8080-exec-3] ERROR c.e.EcoScan.service.ScanService - Error calling Gemini API: 503 Service Unavailable on POST request for "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent": "{<EOL>  "error": {<EOL>    "code": 503,<EOL>    "message": "The model is overloaded. Please try again later.",<EOL>    "status": "UNAVAILABLE"<EOL>  }<EOL>}<EOL>"
+org.springframework.web.client.HttpServerErrorException$ServiceUnavailable: 503 Service Unavailable on POST request for "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent": "{<EOL>  "error": {<EOL>    "code": 503,<EOL>    "message": "The model is overloaded. Please try again later.",<EOL>    "status": "UNAVAILABLE"<EOL>  }<EOL>}<EOL>"
+	at org.springframework.web.client.HttpServerErrorException.create(HttpServerErrorException.java:111)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:189)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:147)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:953)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:902)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:801)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:683)
+	at com.example.EcoScan.service.ScanService.scanProduct(ScanService.java:92)
+	at com.example.EcoScan.controller.ScanController.scanProductJson(ScanController.java:53)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2025-06-02 19:43:44 [http-nio-8080-exec-3] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Failed to analyze product] with root cause
+org.springframework.web.client.HttpServerErrorException$ServiceUnavailable: 503 Service Unavailable on POST request for "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent": "{<EOL>  "error": {<EOL>    "code": 503,<EOL>    "message": "The model is overloaded. Please try again later.",<EOL>    "status": "UNAVAILABLE"<EOL>  }<EOL>}<EOL>"
+	at org.springframework.web.client.HttpServerErrorException.create(HttpServerErrorException.java:111)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:189)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:147)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:953)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:902)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:801)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:683)
+	at com.example.EcoScan.service.ScanService.scanProduct(ScanService.java:92)
+	at com.example.EcoScan.controller.ScanController.scanProductJson(ScanController.java:53)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2025-06-02 19:45:34 [http-nio-8080-exec-9] INFO  c.e.E.controller.ScanController - Received JSON request
+2025-06-02 19:45:34 [http-nio-8080-exec-9] DEBUG c.e.EcoScan.service.ScanService - Calling Gemini API with URL: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
+2025-06-02 19:45:43 [http-nio-8080-exec-9] DEBUG c.e.EcoScan.service.ScanService - Gemini API response status: 200 OK
+2025-06-02 19:45:43 [http-nio-8080-exec-9] DEBUG c.e.EcoScan.service.ScanService - Gemini API raw response body: {
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```json\n{\n    \"productName\": \"Nalgene Everyday Water Bottle\",\n    \"confidence\": 0.95,\n    \"ecoTip\": \"Refill your Nalgene bottle instead of buying single-use plastic bottles to reduce plastic waste.\",\n    \"ecoScore\": 75,\n    \"biodegradability\": 10,\n    \"carbonFootprint\": 60,\n    \"sustainability\": 80,\n    \"toxicity\": 70,\n    \"categories\": [\n        {\n            \"title\": \"Material\",\n            \"score\": 70,\n            \"description\": \"The bottle is made from Tritan, a BPA-free plastic. While BPA-free is good, plastic still has environmental concerns related to production and disposal.\",\n            \"impactDetails\": [\n                \"Tritan is a durable plastic, extending the product's lifespan.\",\n                \"Plastic production relies on fossil fuels.\",\n                \"Plastic can leach chemicals if exposed to high temperatures or harsh chemicals.\"\n            ]\n        },\n        {\n            \"title\": \"Durability & Longevity\",\n            \"score\": 90,\n            \"description\": \"Nalgene bottles are known for their durability and long lifespan, reducing the need for frequent replacements.\",\n            \"impactDetails\": [\n                \"Durable products reduce consumption and waste.\",\n                \"Long-lasting products minimize the environmental impact associated with manufacturing new items.\",\n                \"The bottle is designed to withstand regular use and potential impacts.\"\n            ]\n        }\n    ],\n    \"alternatives\": [\n        {\n            \"productName\": \"Hydro Flask Water Bottle\",\n            \"features\": [\n                \"Stainless steel construction\",\n                \"Insulated\",\n                \"Durable\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/Hydro-Flask-Water-Bottle-Stainless/dp/B072L2428N\",\n            \"ecoScore\": 85\n        },\n        {\n            \"productName\": \"Klean Kanteen Water Bottle\",\n            \"features\": [\n                \"Stainless steel construction\",\n                \"BPA-free\",\n                \"Reusable\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/Klean-Kanteen-Classic-Stainless-Bottle/dp/B000X66D64\",\n            \"ecoScore\": 80\n        },\n        {\n            \"productName\": \"Bambaw Water Bottle\",\n            \"features\": [\n                \"Stainless steel construction\",\n                \"Bamboo lid\",\n                \"Plastic-free\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/Bambaw-Stainless-Steel-Water-Bottle/dp/B071F95562\",\n            \"ecoScore\": 90\n        },\n        {\n            \"productName\": \"Corkcicle Water Bottle\",\n            \"features\": [\n                \"Stainless steel construction\",\n                \"Insulated\",\n                \"Stylish designs\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/Corkcicle-Canteen-Water-Bottle-Stainless/dp/B018450J44\",\n            \"ecoScore\": 78\n        },\n        {\n            \"productName\": \"YETI Rambler Water Bottle\",\n            \"features\": [\n                \"Stainless steel construction\",\n                \"Extremely durable\",\n                \"Insulated\"\n            ],\n            \"amazonLink\": \"https://www.amazon.com/YETI-Rambler-Bottle-Chug-Cap/dp/B0792Y5444\",\n            \"ecoScore\": 82\n        }\n    ],\n    \"environmentalAlerts\": [],\n    \"environmentalBenefits\": [\n        \"Reduces reliance on single-use plastic bottles.\",\n        \"Durable and long-lasting, minimizing the need for replacements.\"\n    ],\n    \"environmentalConcerns\": [\n        \"Made from plastic, which is derived from fossil fuels.\",\n        \"Plastic can contribute to microplastic pollution if not disposed of properly.\"\n    ]\n}\n```"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "avgLogprobs": -0.16689764084491709
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 1644,
+    "candidatesTokenCount": 897,
+    "totalTokenCount": 2541,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 354
+      },
+      {
+        "modality": "IMAGE",
+        "tokenCount": 1290
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 897
+      }
+    ]
+  },
+  "modelVersion": "gemini-2.0-flash",
+  "responseId": "CLI9aPfMOeSpnvgPu7fSiQY"
+}
+
+2025-06-02 19:45:43 [http-nio-8080-exec-9] DEBUG c.e.EcoScan.service.ScanService - Extracted JSON from markdown block. Length after extraction and trim: 3625
+2025-06-02 19:45:43 [http-nio-8080-exec-9] DEBUG c.e.EcoScan.service.ScanService - Final cleaned JSON response before final parsing: >>>{    "productName": "Nalgene Everyday Water Bottle",    "confidence": 0.95,    "ecoTip": "Refill your Nalgene bottle instead of buying single-use plastic bottles to reduce plastic waste.",    "ecoScore": 75,    "biodegradability": 10,    "carbonFootprint": 60,    "sustainability": 80,    "toxicity": 70,    "categories": [        {            "title": "Material",            "score": 70,            "description": "The bottle is made from Tritan, a BPA-free plastic. While BPA-free is good, plastic still has environmental concerns related to production and disposal.",            "impactDetails": [                "Tritan is a durable plastic, extending the product's lifespan.",                "Plastic production relies on fossil fuels.",                "Plastic can leach chemicals if exposed to high temperatures or harsh chemicals."            ]        },        {            "title": "Durability & Longevity",            "score": 90,            "description": "Nalgene bottles are known for their durability and long lifespan, reducing the need for frequent replacements.",            "impactDetails": [                "Durable products reduce consumption and waste.",                "Long-lasting products minimize the environmental impact associated with manufacturing new items.",                "The bottle is designed to withstand regular use and potential impacts."            ]        }    ],    "alternatives": [        {            "productName": "Hydro Flask Water Bottle",            "features": [                "Stainless steel construction",                "Insulated",                "Durable"            ],            "amazonLink": "https://www.amazon.com/Hydro-Flask-Water-Bottle-Stainless/dp/B072L2428N",            "ecoScore": 85        },        {            "productName": "Klean Kanteen Water Bottle",            "features": [                "Stainless steel construction",                "BPA-free",                "Reusable"            ],            "amazonLink": "https://www.amazon.com/Klean-Kanteen-Classic-Stainless-Bottle/dp/B000X66D64",            "ecoScore": 80        },        {            "productName": "Bambaw Water Bottle",            "features": [                "Stainless steel construction",                "Bamboo lid",                "Plastic-free"            ],            "amazonLink": "https://www.amazon.com/Bambaw-Stainless-Steel-Water-Bottle/dp/B071F95562",            "ecoScore": 90        },        {            "productName": "Corkcicle Water Bottle",            "features": [                "Stainless steel construction",                "Insulated",                "Stylish designs"            ],            "amazonLink": "https://www.amazon.com/Corkcicle-Canteen-Water-Bottle-Stainless/dp/B018450J44",            "ecoScore": 78        },        {            "productName": "YETI Rambler Water Bottle",            "features": [                "Stainless steel construction",                "Extremely durable",                "Insulated"            ],            "amazonLink": "https://www.amazon.com/YETI-Rambler-Bottle-Chug-Cap/dp/B0792Y5444",            "ecoScore": 82        }    ],    "environmentalAlerts": [],    "environmentalBenefits": [        "Reduces reliance on single-use plastic bottles.",        "Durable and long-lasting, minimizing the need for replacements."    ],    "environmentalConcerns": [        "Made from plastic, which is derived from fossil fuels.",        "Plastic can contribute to microplastic pollution if not disposed of properly."    ]}<<<
+2025-06-02 23:01:48 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-02 23:01:48 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
